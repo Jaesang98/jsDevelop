@@ -1,0 +1,9 @@
+{
+    "intro": {
+        "title": "bizMOB sample project"
+    },
+    "main": {
+        "greeting": "Wellcome",
+        "name_greeting": "Hello {name}"
+    }
+}

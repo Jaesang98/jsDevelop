@@ -1,0 +1,9 @@
+{
+    "intro": {
+        "title": "bizMOB 샘플 프로젝트"
+    },
+    "main": {
+        "greeting": "환영합니다.",
+        "name_greeting": "{name}님 환영합니다."
+    }
+}
