@@ -3,7 +3,9 @@
 
   <section class="container">
     <div class="main-base">
-      <button class="button-main" @click="util.pageOpen('CODE_1000')">오늘은 뭘 보러왔니?</button>
+      <h1 class="mt-3">JSDV에 오신걸 환영합니다!</h1>
+      <p class="mt-3">Though it looks quite polished in English, this is still a developer site with much room for improvement.</p>
+      <button class="button-main mt-3" @click="util.pageOpen('CODE_1000')">오늘은 뭘 보러왔니?</button>
     </div>
   </section>
 

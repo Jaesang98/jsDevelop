@@ -10,73 +10,23 @@
       </div>
 
       <div class="code-sideTemplete">
-        <strong>네이버 API사용</strong>
-        <div class="code-sideList">로그인</div>
-        <div class="code-sideList">검색엔진</div>
-        <div class="code-sideList">네이버맵</div>
+        <strong>API사용</strong>
+        <div class="code-sideList">네이버 API</div>
+        <div class="code-sideList">카카오 API</div>
+        <div class="code-sideList">구글 API</div>
       </div>
 
       <div class="code-sideTemplete">
-        <strong>카카오 API사용</strong>
-        <div class="code-sideList">로그인</div>
-        <div class="code-sideList">검색엔진</div>
-        <div class="code-sideList">네이버맵</div>
+        <strong>라이브러리사용</strong>
+        <div class="code-sideList">부트스트랩</div>
+        <div class="code-sideList">swiper</div>
+        <div class="code-sideList">Datepicker</div>
       </div>
 
       <div class="code-sideTemplete">
-        <strong>네이버 API사용</strong>
-        <div class="code-sideList">로그인</div>
-        <div class="code-sideList">검색엔진</div>
-        <div class="code-sideList">네이버맵</div>
-      </div>
-
-      <div class="code-sideTemplete">
-        <strong>카카오 API사용</strong>
-        <div class="code-sideList">로그인</div>
-        <div class="code-sideList">검색엔진</div>
-        <div class="code-sideList">네이버맵</div>
-      </div>
-
-      <div class="code-sideTemplete">
-        <strong>네이버 API사용</strong>
-        <div class="code-sideList">로그인</div>
-        <div class="code-sideList">검색엔진</div>
-        <div class="code-sideList">네이버맵</div>
-      </div>
-
-      <div class="code-sideTemplete">
-        <strong>카카오 API사용</strong>
-        <div class="code-sideList">로그인</div>
-        <div class="code-sideList">검색엔진</div>
-        <div class="code-sideList">네이버맵</div>
-      </div>
-
-      <div class="code-sideTemplete">
-        <strong>네이버 API사용</strong>
-        <div class="code-sideList">로그인</div>
-        <div class="code-sideList">검색엔진</div>
-        <div class="code-sideList">네이버맵</div>
-      </div>
-
-      <div class="code-sideTemplete">
-        <strong>카카오 API사용</strong>
-        <div class="code-sideList">로그인</div>
-        <div class="code-sideList">검색엔진</div>
-        <div class="code-sideList">네이버맵</div>
-      </div>
-
-      <div class="code-sideTemplete">
-        <strong>네이버 API사용</strong>
-        <div class="code-sideList">로그인</div>
-        <div class="code-sideList">검색엔진</div>
-        <div class="code-sideList">네이버맵</div>
-      </div>
-
-      <div class="code-sideTemplete">
-        <strong>카카오 API사용</strong>
-        <div class="code-sideList">로그인</div>
-        <div class="code-sideList">검색엔진</div>
-        <div class="code-sideList">네이버맵</div>
+        <strong>유틸리티</strong>
+        <div class="code-sideList">DATE</div>
+        <div class="code-sideList">SCROLL</div>
       </div>
     </div>
     <!-- 사이드 -->
@@ -154,6 +104,14 @@
             간략한 코드 설명 입니다
           </div>
         </div>
+      </div>
+    </div>
+
+    <div class="code-category">
+      <div class="code-sideTemplete">
+        <div class="code-sideList">네이버 MAP</div>
+        <div class="code-sideList">네이버 SEARCH</div>
+        <div class="code-sideList">네이버 LOcation</div>
       </div>
     </div>
   </section>

@@ -35,9 +35,8 @@ footer {
 
 /* 메인 */
 .main-base {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  margin: auto;
+  text-align: center;
 }
 
 .button-main {
@@ -76,7 +75,7 @@ footer {
 
 .code-contents {
   padding: 10px;
-  width: 80%;
+  width: 60%;
   height: calc(100vh - 4rem);
   overflow-y: auto;
 }
@@ -162,4 +161,9 @@ footer {
 .template-siteInfo a:hover {
   color: #0056b3;
   text-decoration: underline;
+}
+
+.code-category {
+  width: 20%;
+  padding: 10px;
 }
