@@ -1,0 +1,50 @@
+{
+    "body": {
+        "codeList": [
+            {
+                "id": "MNU01_TPL01",
+                "title": "소개",
+                "content": " 안녕하세요 프론트엔드 개발자 남재상입니다. 이 사이트는 그냥 제가 편하려고 만든겁니다",
+                "img": "https://picsum.photos/400/300",
+                "gif": "https://media.giphy.com/media/3ohs7Q4aZCs6Dr7sgI/giphy.gif",
+                "iframeSrc": "http://localhost:8080/checkbox1",
+                "codeInfo": [
+                    {
+                        "codeId": "TPL01_CD01",
+                        "codeLanguage": "vue",
+                        "codeContent": "function testFuntion() {\n  alert('테스트 입니다');\n}",
+                        "codeDescription": "이건 vue로 한거임"
+                    },
+                    {
+                        "codeId": "TPL01_CD02",
+                        "codeLanguage": "React",
+                        "codeContent": "",
+                        "codeDescription": "이건 react로 한거임"
+                    }
+                ]
+            },
+            {
+                "id": "MNU01_TPL01",
+                "title": "소개2",
+                "content": " 안녕하세요 프론트엔드 개발자 남재상입니다. 이 사이트는 그냥 제가 편하려고 만든겁니다",
+                "img": "https://picsum.photos/400/300",
+                "gif": "https://media.giphy.com/media/3ohs7Q4aZCs6Dr7sgI/giphy.gif",
+                "iframeSrc": "http://localhost:8080/checkbox1",
+                "codeInfo": [
+                    {
+                        "codeId": "TPL01_CD01",
+                        "codeLanguage": "vue",
+                        "codeContent": "function testFuntion() {alert('테스트 입니다')}",
+                        "codeDescription": "이건 vue로 한거임"
+                    },
+                    {
+                        "codeId": "TPL01_CD02",
+                        "codeLanguage": "React",
+                        "codeContent": "",
+                        "codeDescription": "이건 react로 한거임"
+                    }
+                ]
+            }
+        ]
+    }
+}

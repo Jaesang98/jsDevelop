@@ -1,0 +1,160 @@
+{
+    "body": {
+        "menuList": [
+            {
+                "id": "MNU01",
+                "name": "소개",
+                "subMenus": [
+                    {
+                        "id": "MNU01_SUB01",
+                        "name": "내가 궁금하면 클릭 ㄱㄱ",
+                        "categories": [
+                            {
+                                "id": "MNU01_CAT01",
+                                "name": "내 소개임"
+                            },
+                            {
+                                "id": "MNU01_CAT02",
+                                "name": "내가 만든 이유임"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "MNU02",
+                "name": "API사용",
+                "subMenus": [
+                    {
+                        "id": "MNU02_SUB01",
+                        "name": "네이버 API",
+                        "categories": [
+                            {
+                                "id": "MNU02_CAT01",
+                                "name": "네이버 로그인"
+                            },
+                            {
+                                "id": "MNU02_CAT02",
+                                "name": "네이버 지도"
+                            },
+                            {
+                                "id": "MNU02_CAT03",
+                                "name": "네이버 검색"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "MNU02_SUB02",
+                        "name": "카카오 API",
+                        "categories": [
+                            {
+                                "id": "MNU02_CAT04",
+                                "name": "카카오 로그인"
+                            },
+                            {
+                                "id": "MNU02_CAT05",
+                                "name": "카카오 지도"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "MNU02_SUB03",
+                        "name": "구글 API",
+                        "categories": [
+                            {
+                                "id": "MNU02_CAT06",
+                                "name": "구글 로그인"
+                            },
+                            {
+                                "id": "MNU02_CAT07",
+                                "name": "구글 지도"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "MNU03",
+                "name": "라이브러리사용",
+                "subMenus": [
+                    {
+                        "id": "MNU03_SUB01",
+                        "name": "부트스트랩",
+                        "categories": [
+                            {
+                                "id": "MNU03_CAT01",
+                                "name": "부트스트랩 기본"
+                            },
+                            {
+                                "id": "MNU03_CAT02",
+                                "name": "부트스트랩 구성 요소"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "MNU03_SUB02",
+                        "name": "swiper",
+                        "categories": [
+                            {
+                                "id": "MNU03_CAT03",
+                                "name": "기본 사용법"
+                            },
+                            {
+                                "id": "MNU03_CAT04",
+                                "name": "고급 설정"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "MNU03_SUB03",
+                        "name": "Datepicker",
+                        "categories": [
+                            {
+                                "id": "MNU03_CAT05",
+                                "name": "기본 사용법"
+                            },
+                            {
+                                "id": "MNU03_CAT06",
+                                "name": "커스터마이징"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "MNU04",
+                "name": "유틸리티",
+                "subMenus": [
+                    {
+                        "id": "MNU04_SUB01",
+                        "name": "DATE",
+                        "categories": [
+                            {
+                                "id": "MNU04_CAT01",
+                                "name": "날짜 형식 변환"
+                            },
+                            {
+                                "id": "MNU04_CAT02",
+                                "name": "날짜 비교"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "MNU04_SUB02",
+                        "name": "SCROLL",
+                        "categories": [
+                            {
+                                "id": "MNU04_CAT03",
+                                "name": "스크롤 이벤트"
+                            },
+                            {
+                                "id": "MNU04_CAT04",
+                                "name": "스크롤 위치 저장"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

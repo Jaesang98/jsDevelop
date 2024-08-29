@@ -4,104 +4,57 @@
   <section class="container">
     <!-- 사이드 -->
     <div class="code-sideMenu">
-      <div class="code-sideTemplete">
-        <strong>소개</strong>
-        <div class="code-sideList">내가 궁금하면 클릭 ㄱㄱ</div>
-      </div>
-
-      <div class="code-sideTemplete">
-        <strong>API사용</strong>
-        <div class="code-sideList">네이버 API</div>
-        <div class="code-sideList">카카오 API</div>
-        <div class="code-sideList">구글 API</div>
-      </div>
-
-      <div class="code-sideTemplete">
-        <strong>라이브러리사용</strong>
-        <div class="code-sideList">부트스트랩</div>
-        <div class="code-sideList">swiper</div>
-        <div class="code-sideList">Datepicker</div>
-      </div>
-
-      <div class="code-sideTemplete">
-        <strong>유틸리티</strong>
-        <div class="code-sideList">DATE</div>
-        <div class="code-sideList">SCROLL</div>
+      <div class="code-sideTemplete" v-for="(menuList, idx) in menuList" :key="idx">
+        <strong @click="selMenu = menuList.subMenus[0].id">{{ menuList.name }}</strong>
+        <div class="code-sideList" v-for="(subMenu, idx2) in menuList.subMenus" :key="idx2"
+          @click="selMenu = subMenu.id">
+          {{ subMenu.name }}
+        </div>
       </div>
     </div>
     <!-- 사이드 -->
 
     <div class="code-contents">
-      <div class="content-template">
+      <div class="content-template" v-for="(codeList, idx) in codeList" :key="idx">
         <div class="template-header">
-          <h1>소개</h1>
-          <h4 class="mt-3">이것은 소개의 설명입니다 이것은 소개의 설명입니다 이것은 소개의 설명입니다 이것은 소개의 설명입니다</h4>
+          <h1>{{ codeList.title }}</h1>
+          <h4 class="mt-3">{{ codeList.content }}</h4>
         </div>
 
+        <!-- 이미지 -->
         <div class="template-img mt-3">
           <img src="https://picsum.photos/400/300" alt="Lorem Picsum Image">
         </div>
 
+        <!-- gif -->
         <div class="template-gif mt-3">
           <img src="https://media.giphy.com/media/3ohs7Q4aZCs6Dr7sgI/giphy.gif" alt="Waving Flag">
         </div>
 
+        <!--  -->
         <div class="template-html mt-3">
-          <button @click="testFuntion()">테스트 버튼 입니다</button>
+          <CodeEditor :codeURL="codeList.iframeSrc" />
         </div>
 
+        <!-- 코드 -->
         <div class="mt-4">
+
           <ul class="nav nav-underline">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Vue</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">React</a>
+            <li class="nav-item" v-for="(codeInfo, idx2) in codeList.codeInfo" :key="idx2">
+              <a class="nav-link" :class="{ active: codeInfo.codeId === selCodeIds[idx] }"
+                @click="selCodeIds[idx] = codeInfo.codeId">
+                {{ codeInfo.codeLanguage }}
+              </a>
             </li>
           </ul>
-          <div class="template-code mt-3">
-            <CodeBlock :code="vueCode" />
-          </div>
 
-          <div class="template-description mt-3">
-            간략한 코드 설명 입니다
-          </div>
-        </div>
-      </div>
-
-      <div class="content-template">
-        <div class="template-header">
-          <h1>소개</h1>
-          <h4 class="mt-3">이것은 소개의 설명입니다 이것은 소개의 설명입니다 이것은 소개의 설명입니다 이것은 소개의 설명입니다</h4>
-        </div>
-
-        <div class="template-img mt-3">
-          <img src="https://picsum.photos/400/300" alt="Lorem Picsum Image">
-        </div>
-
-        <div class="template-gif mt-3">
-          <img src="https://media.giphy.com/media/3ohs7Q4aZCs6Dr7sgI/giphy.gif" alt="Waving Flag">
-        </div>
-
-        <div class="template-html mt-3">
-          <button @click="testFuntion()">테스트 버튼 입니다</button>
-        </div>
-
-        <div class="mt-4">
-          <ul class="nav nav-underline">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Vue</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">React</a>
-            </li>
-          </ul>
-          <div class="template-code mt-3">
-            <CodeBlock :code="vueCode" />
-          </div>
-
-          <div class="template-description mt-3">
-            간략한 코드 설명 입니다
+          <div v-for="(codeInfo, idx2) in codeList.codeInfo" :key="idx2">
+            <div v-if="codeInfo.codeId === selCodeIds[idx]" class="template-code mt-3">
+              <CodeBlock :code="codeInfo.codeContent" />
+            </div>
+            <div v-if="codeInfo.codeId === selCodeIds[idx]" class="template-description mt-3">
+              {{ codeInfo.codeDescription }}
+            </div>
           </div>
         </div>
       </div>
@@ -109,9 +62,8 @@
 
     <div class="code-category">
       <div class="code-sideTemplete">
-        <div class="code-sideList">네이버 MAP</div>
-        <div class="code-sideList">네이버 SEARCH</div>
-        <div class="code-sideList">네이버 LOcation</div>
+        <div class="code-sideList" v-for="(category, idx) in categoryList" :key="idx" @click="resCodeList(category.id)">
+          {{ category.name }}</div>
       </div>
     </div>
   </section>
@@ -124,16 +76,97 @@ import '@/assets/css/global.css'
 import Header from '@/component/Header.vue';
 import Footer from '@/component/Footer.vue';
 import CodeBlock from '@/component/CodeBlock.vue';
-// import * as util from '@/shared/util';
+import CodeEditor from '@/component/CodeEditor.vue';
+import * as util from '@/shared/util';
+import { ref, computed, onMounted } from 'vue';
 
-function testFuntion() {
-  alert("테스트 입니다")
+// import prettier from "prettier";
+// 
+// const code = `
+// const menuList = ref([]);
+// const selMenu = ref("");
+// const categoryList = computed(() => {
+//   const selectedMenu = menuList.value
+//     .flatMap(menu => menu.subMenus)
+//     .find(subMenu => subMenu.id === selMenu.value);
+//   return selectedMenu ? selectedMenu.categories : [];
+// });
+// `;
+
+// const formattedCode = prettier.format(code, {
+//   parser: "babel",
+//   semi: true,
+//   singleQuote: true,
+// });
+
+// console.log(JSON.stringify(formattedCode));
+
+const menuList = ref([]);                                 // 메뉴 카테고리 전체 데이터
+const selMenu = ref("");                                  // 선택한 서브 메뉴 아이디
+const categoryList = computed(() => {                     // 선택한 서브 메뉴의 카테고리 리스트
+  const selectedMenu = menuList.value
+    .flatMap(menu => menu.subMenus)
+    .find(subMenu => subMenu.id === selMenu.value);
+  return selectedMenu ? selectedMenu.categories : [];
+});
+
+const codeList = ref([]);                                 //각 카테고리의 맞는 리스트
+const selCodeIds = ref([]);                               //각 템플릿의 코드 언어에 따라 구분하는 아이디값
+
+// 메뉴, 서브메뉴, 카테고리 받아옴
+function resMenuList() {
+  util.JSNetwort({
+    url: "/testData/menuList.json",
+    method: "GET",
+    headers: {},
+    body: {}
+  })
+    .then(res => {
+      menuList.value = res.body.menuList;
+      selMenu.value = menuList.value[0].subMenus[0].id;
+    })
+    .catch(err => {
+      console.log(err)
+    });
 }
 
-const vueCode =
-  `function testFuntion() {
-  alert("테스트 입니다")
-}`
+// 각 카테고리 값의 맞는 데이터
+function resCodeList(categoryID) {
+  util.JSNetwort({
+    url: "/testData/codeList.json",
+    method: "GET",
+    headers: {},
+    body: {
+      categoryID: categoryID || "MNU01_CAT01"
+    }
+  })
+    .then(res => {
+      codeList.value = res.body.codeList;
+      selCodeIds.value = res.body.codeList.map(code => code.codeInfo[0]?.codeId || '');
+    })
+    .catch(err => {
+      console.log(err)
+    });
+}
+
+// function codeFomatted() {
+//   const prettier = require("prettier");
+//   const code = `const menuList = ref([]); const selMenu = ref(""); const categoryList = computed(() => { const selectedMenu = menuList.value.flatMap(menu => menu.subMenus).find(subMenu => subMenu.id === selMenu.value); return selectedMenu ? selectedMenu.categories : []; });`;
+//   const formattedCode = prettier.format(code, { parser: "babel" });
+//   console.log(formattedCode)
+// }
+
+onMounted(() => {
+  resMenuList();
+  resCodeList();
+
+  // codeFomatted();
+});
+
+
+// function testFuntion() {
+//   alert("테스트 입니다")
+// }
 
 
 </script>
