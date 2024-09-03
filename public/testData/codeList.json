@@ -12,36 +12,14 @@
                     {
                         "codeId": "TPL01_CD01",
                         "codeLanguage": "vue",
-                        "codeContent": "function testFuntion() {\n  alert('테스트 입니다');\n}",
+                        "codeContent": "<script setup>\n/* eslint-disable */\nimport { ref } from 'vue';\nimport CodeBlock from \"@/component/CodeBlock.vue\";  //highlight.js사용\n\n//기존 내가 작성한 코드\nconst multiLineCode = ref(`function 테스트함수() {\n    console.log(\"안녕 나는 테스트야!\")\n}`);\n\n//코드 이스케이프\nfunction singleLineCode() {\n    multiLineCode.value = multiLineCode.value\n        // 백슬래시를 이스케이프 처리\n        .replace(/\\/g, '\\\\')\n\n        // 줄바꿈 문자 이스케이프\n        .replace(/\n/g, '\\n')\n\n        // 캐리지 리턴 이스케이프\n        .replace(//g, '\\r')\n\n        // 탭 문자 이스케이프\n        .replace(/\t/g, '\\t')\n\n        // 큰따옴표 이스케이프\n        .replace(/\"/g, '\\\"')\n\n        // 작은따옴표 이스케이프\n        .replace(/'/g, \"\\'\")\n}\n\n//코드 복원\nfunction originalCode() {\n    multiLineCode.value = multiLineCode.value\n        // 큰따옴표 이스케이프 복원\n        .replace(/\\\"/g, '\"')\n\n        // 작은따옴표 이스케이프 복원\n        .replace(/\\'/g, \"'\")\n\n        // 줄바꿈 문자 복원\n        .replace(/\\n/g, '\n')\n\n        // 캐리지 리턴 복원\n        .replace(/\\r/g, '')\n\n        // 탭 문자 복원\n        .replace(/\\t/g, '\t')\n\n        // 백슬래시 복원\n        .replace(/\\\\/g, '\\');\n}\n\n</script>",
                         "codeDescription": "이건 vue로 한거임"
                     },
                     {
                         "codeId": "TPL01_CD02",
                         "codeLanguage": "React",
-                        "codeContent": "",
-                        "codeDescription": "이건 react로 한거임"
-                    }
-                ]
-            },
-            {
-                "id": "MNU01_TPL01",
-                "title": "소개2",
-                "content": " 안녕하세요 프론트엔드 개발자 남재상입니다. 이 사이트는 그냥 제가 편하려고 만든겁니다",
-                "img": "https://picsum.photos/400/300",
-                "gif": "https://media.giphy.com/media/3ohs7Q4aZCs6Dr7sgI/giphy.gif",
-                "iframeSrc": "http://localhost:8080/checkbox1",
-                "codeInfo": [
-                    {
-                        "codeId": "TPL01_CD01",
-                        "codeLanguage": "vue",
-                        "codeContent": "function testFuntion() {alert('테스트 입니다')}",
-                        "codeDescription": "이건 vue로 한거임"
-                    },
-                    {
-                        "codeId": "TPL01_CD02",
-                        "codeLanguage": "React",
-                        "codeContent": "",
-                        "codeDescription": "이건 react로 한거임"
+                        "codeContent": "준비중",
+                        "codeDescription": "react는 준비중임 ㅋㅋ"
                     }
                 ]
             }

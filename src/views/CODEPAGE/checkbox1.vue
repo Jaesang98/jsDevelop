@@ -1,24 +1,25 @@
 <template>
-  <div class="testStyle">아이프레임 테스트</div>
-  <button class="btnTest" @click="testClick">버튼 클릭되나?</button>
+    <div class="mt-3">
+        <div>
+            <CodeBlock :code="code"></CodeBlock>
+        </div>
+    </div>
 </template>
 
 <script setup>
-function testClick() {
-    alert("휴 클릭이되네");
-}
+import CodeBlock from "@/component/CodeBlock.vue";  //highlight.js사용
+
+const code = `
+const selMenu = ref("");                                  // 선택한 서브 메뉴 아이디
+const categoryList = computed(() => {                     // 선택한 서브 메뉴의 카테고리 리스트
+  const selectedMenu = menuList.value
+    .flatMap(menu => menu.subMenus)
+    .find(subMenu => subMenu.id === selMenu.value);
+  return selectedMenu ? selectedMenu.categories : [];
+});
+`;
+
+
 </script>
 
-<style>
-.testStyle {
-    text-align: center;
-    color: aqua;
-    font-size: 700;
-}
-
-.btnTest {
-    padding: 20px;
-    background-color: black;
-    color: aliceblue;
-}
-</style>
+<style></style>

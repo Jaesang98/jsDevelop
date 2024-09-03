@@ -80,27 +80,6 @@ import CodeEditor from '@/component/CodeEditor.vue';
 import * as util from '@/shared/util';
 import { ref, computed, onMounted } from 'vue';
 
-// import prettier from "prettier";
-// 
-// const code = `
-// const menuList = ref([]);
-// const selMenu = ref("");
-// const categoryList = computed(() => {
-//   const selectedMenu = menuList.value
-//     .flatMap(menu => menu.subMenus)
-//     .find(subMenu => subMenu.id === selMenu.value);
-//   return selectedMenu ? selectedMenu.categories : [];
-// });
-// `;
-
-// const formattedCode = prettier.format(code, {
-//   parser: "babel",
-//   semi: true,
-//   singleQuote: true,
-// });
-
-// console.log(JSON.stringify(formattedCode));
-
 const menuList = ref([]);                                 // 메뉴 카테고리 전체 데이터
 const selMenu = ref("");                                  // 선택한 서브 메뉴 아이디
 const categoryList = computed(() => {                     // 선택한 서브 메뉴의 카테고리 리스트
@@ -149,25 +128,10 @@ function resCodeList(categoryID) {
     });
 }
 
-// function codeFomatted() {
-//   const prettier = require("prettier");
-//   const code = `const menuList = ref([]); const selMenu = ref(""); const categoryList = computed(() => { const selectedMenu = menuList.value.flatMap(menu => menu.subMenus).find(subMenu => subMenu.id === selMenu.value); return selectedMenu ? selectedMenu.categories : []; });`;
-//   const formattedCode = prettier.format(code, { parser: "babel" });
-//   console.log(formattedCode)
-// }
-
 onMounted(() => {
   resMenuList();
   resCodeList();
-
-  // codeFomatted();
 });
-
-
-// function testFuntion() {
-//   alert("테스트 입니다")
-// }
-
 
 </script>
 
