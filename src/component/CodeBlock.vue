@@ -1,35 +1,48 @@
-<!-- src/components/CodeBlock.vue -->
 <template>
-    <pre><code ref="codeBlock" class="language-javascript">{{ code }}</code></pre>
+    <div>
+        <pre v-html="highlightedCode"></pre>
+    </div>
 </template>
 
 <script setup>
 /* eslint-disable */
-import { onMounted, ref } from 'vue';
-import hljs from 'highlight.js';
-import 'highlight.js/styles/default.css'; // 원하는 스타일로 변경 가능
+import { ref, onMounted, watch } from 'vue'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/atom-one-dark.css'
+import javascript from 'highlight.js/lib/languages/javascript'
 
-// Define the props using defineProps
+hljs.registerLanguage('javascript', javascript)
+
 const props = defineProps({
     code: {
         type: String,
         required: true
+    },
+    language: {
+        type: String,
+        default: 'javascript'
     }
-});
+})
 
-const codeBlock = ref(null);
+const highlightedCode = ref('')
+
+const highlightCode = () => {
+    highlightedCode.value = hljs.highlight(props.code, {
+        language: props.language
+    }).value
+}
 
 onMounted(() => {
-    if (codeBlock.value) {
-        hljs.highlightElement(codeBlock.value);
-    }
-});
+    highlightCode()
+})
+
+watch(() => props.code, highlightCode)
+watch(() => props.language, highlightCode)
 </script>
 
 <style scoped>
 pre {
     padding: 1em;
-    background: #f5f5f5;
     border-radius: 5px;
     overflow-x: auto;
 }

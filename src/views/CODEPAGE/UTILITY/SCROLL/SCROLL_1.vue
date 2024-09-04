@@ -50,7 +50,7 @@ function scrollToElement(refs, refName) {
   color: #333;
 }
 
-.code-contents {
+.code-container .code-contents {
   max-height: 300px;
   overflow-y: auto;
   margin-bottom: 20px;

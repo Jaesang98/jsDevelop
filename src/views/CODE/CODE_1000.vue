@@ -97,7 +97,7 @@ const selCodeIds = ref([]);                               //각 템플릿의 코
 // 메뉴, 서브메뉴, 카테고리 받아옴
 function resMenuList() {
   util.JSNetwort({
-    url: "/testData/menuList.json",
+    url: "./testData/menuList.json",
     method: "GET",
     headers: {},
     body: {}
@@ -123,12 +123,13 @@ function resCodeList(menuId) {
   else if (menuId == "MNU04_SUB01") {
     page.value = "sortList";
   }
+  //유틸 - 스크롤
   else if (menuId == "MNU04_SUB02") {
     page.value = "scrollList";
   }
 
   util.JSNetwort({
-    url: `/testData/${page.value}.json`,
+    url: `./testData/${page.value}.json`,
     method: "GET",
     headers: {},
     body: {

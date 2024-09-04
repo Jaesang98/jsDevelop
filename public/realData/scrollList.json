@@ -7,7 +7,7 @@
                 "content": "요소에 정의되어있는 ref를 scrollIntoView로 스크롤 구현한 기능입니다",
                 "img": "",
                 "gif": "",
-                "iframeSrc": "http://localhost:8080/#/SCROLL_1",
+                "iframeSrc": "https://jaesang98.github.io/jsnamDeveloper/#/SCROLL_1",
                 "codeInfo": [
                     {
                         "codeId": "TPL01_CD01",
@@ -29,7 +29,7 @@
                 "content": "데이터로 반복 렌더링한 ref를 scrollIntoView로 스크롤 구현한 기능입니다",
                 "img": "",
                 "gif": "",
-                "iframeSrc": "http://localhost:8080/#/SCROLL_2",
+                "iframeSrc": "https://jaesang98.github.io/jsnamDeveloper/#/SCROLL_2",
                 "codeInfo": [
                     {
                         "codeId": "TPL01_CD01",
@@ -51,7 +51,7 @@
                 "content": "데이터로 반복 렌더링한 ref를 scrollTo로 스크롤 구현한 기능입니다",
                 "img": "",
                 "gif": "",
-                "iframeSrc": "http://localhost:8080/#/SCROLL_3",
+                "iframeSrc": "https://jaesang98.github.io/jsnamDeveloper/#/SCROLL_3",
                 "codeInfo": [
                     {
                         "codeId": "TPL01_CD01",
@@ -73,7 +73,7 @@
                 "content": "Scroll을 맨 위와 맨 아래로 보내는 기능입니다",
                 "img": "",
                 "gif": "",
-                "iframeSrc": "http://localhost:8080/#/SCROLL_4",
+                "iframeSrc": "https://jaesang98.github.io/jsnamDeveloper/#/SCROLL_4",
                 "codeInfo": [
                     {
                         "codeId": "TPL01_CD01",

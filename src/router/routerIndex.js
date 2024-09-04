@@ -1,4 +1,5 @@
-import { createWebHistory, createRouter } from "vue-router";
+import { createWebHashHistory, createRouter } from "vue-router";
+// import { createWebHistory, createRouter } from "vue-router";
 
 //라우터들 임포트
 import mainRouter from '@/router/routes/mainRouter';
@@ -7,7 +8,7 @@ import siteRouter from '@/router/routes/siteRouter';
 import codeUtilRouter from "./routes/codeUtilRouter";
 
 const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL),
+    history: createWebHashHistory(process.env.BASE_URL),
     routes: [
         // Default Path 설정
         {
