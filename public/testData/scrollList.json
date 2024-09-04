@@ -3,8 +3,8 @@
         "codeList": [
             {
                 "id": "TPL01",
-                "title": "1. SCROLL (각 요소에 맞게 스크롤)",
-                "content": "스크롤 정의",
+                "title": "1. scrollIntoView (직접 Ref 스크롤)",
+                "content": "요소에 정의되어있는 ref를 scrollIntoView로 스크롤 구현한 기능입니다",
                 "img": "",
                 "gif": "",
                 "iframeSrc": "http://localhost:8080/SCROLL_1",
@@ -12,8 +12,74 @@
                     {
                         "codeId": "TPL01_CD01",
                         "codeLanguage": "vue",
-                        "codeContent": "",
-                        "codeDescription": ""
+                        "codeContent": "<template>\n  <div class=\"code-container\">\n    <div>\n      <h3 class=\"code-title\">각 요소별 스크롤 이동</h3>\n\n      <div class=\"code-contents\">\n        <div class=\"content-item\" ref=\"element0\">첫번째 요소</div>\n        <div class=\"content-item\" ref=\"element1\">두번째 요소</div>\n        <div class=\"content-item\" ref=\"element2\">세번째 요소</div>\n        <div class=\"content-item\" ref=\"element3\">네번째 요소</div>\n        <div class=\"content-item\" ref=\"element4\">다섯번째 요소</div>\n      </div>\n\n      <div class=\"button-group\">\n        <button @click=\"scrollToElement($refs, 'element0')\">첫번째로 이동</button>\n        <button @click=\"scrollToElement($refs, 'element1')\">두번째로 이동</button>\n        <button @click=\"scrollToElement($refs, 'element2')\">세번째로 이동</button>\n        <button @click=\"scrollToElement($refs, 'element3')\">네번째로 이동</button>\n        <button @click=\"scrollToElement($refs, 'element4')\">다섯번째로 이동</button>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup>\nfunction scrollToElement(refs, refName) {\n  const element = refs[refName];\n  if (element) {\n    //block는 start center end nearest\n    element.scrollIntoView({ behavior: 'smooth',  block: \"nearest\"});\n  }\n}\n</script>",
+                        "codeDescription": "각 요소에 대해 ref를 명시적으로 설정하고, 이를 이용해 특정 요소로 스크롤함"
+                    },
+                    {
+                        "codeId": "TPL01_CD02",
+                        "codeLanguage": "React",
+                        "codeContent": "준비중",
+                        "codeDescription": "준비중"
+                    }
+                ]
+            },
+            {
+                "id": "TPL01",
+                "title": "2. scrollIntoView (반복 Ref 스크롤)",
+                "content": "데이터로 반복 렌더링한 ref를 scrollIntoView로 스크롤 구현한 기능입니다",
+                "img": "",
+                "gif": "",
+                "iframeSrc": "http://localhost:8080/SCROLL_2",
+                "codeInfo": [
+                    {
+                        "codeId": "TPL01_CD01",
+                        "codeLanguage": "vue",
+                        "codeContent": "<template>\n  <div class=\"code-container\">\n    <div>\n      <h3 class=\"code-title\">각 요소별 스크롤 이동</h3>\n\n      <div class=\"code-contents\">\n        <div class=\"content-item\" \n          v-for=\"(element,idx) in elements\" \n          :key=\"idx\"\n          :ref=\"element\">{{idx+1}}번째 요소</div>\n      </div>\n\n      <div class=\"button-group\">\n        <button \n          v-for=\"(element,idx) in elements\" \n          :key=\"idx\"\n          @click=\"scrollToElement($refs, element)\">{{idx+1}}번째로 이동\n      </button>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup>\nconst elements = [\"element0\", \"element1\", \"element2\", \"element3\", \"element4\"];\n\nfunction scrollToElement(refs, refName) {\n  const element = refs[refName];\n  //element[0] 으로 바꿈\n  if (element && element[0]) {\n    //block는 start center end nearest\n    element[0].scrollIntoView({ behavior: 'smooth', block: 'nearest' });\n  }\n}\n</script>",
+                        "codeDescription": "반복적으로 요소를 렌더링하고, 동적으로 생성된 ref를 사용해 특정 요소로 스크롤함"
+                    },
+                    {
+                        "codeId": "TPL01_CD02",
+                        "codeLanguage": "React",
+                        "codeContent": "준비중",
+                        "codeDescription": "준비중"
+                    }
+                ]
+            },
+            {
+                "id": "TPL01",
+                "title": "3. scrollTo",
+                "content": "데이터로 반복 렌더링한 ref를 scrollTo로 스크롤 구현한 기능입니다",
+                "img": "",
+                "gif": "",
+                "iframeSrc": "http://localhost:8080/SCROLL_3",
+                "codeInfo": [
+                    {
+                        "codeId": "TPL01_CD01",
+                        "codeLanguage": "vue",
+                        "codeContent": "<template>\n  <div class=\"code-container\">\n    <div>\n      <h3 class=\"code-title\">각 요소별 스크롤 이동</h3>\n\n      <div class=\"code-contents\">\n        <div class=\"content-item\" \n          v-for=\"(element,idx) in elements\" \n          :key=\"idx\"\n          :ref=\"element\">{{idx+1}}번째 요소</div>\n      </div>\n\n      <div class=\"button-group\">\n        <button \n          v-for=\"(element,idx) in elements\" \n          :key=\"idx\"\n          @click=\"scrollToElement($refs, element)\">{{idx+1}}번째로 이동\n      </button>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup>\nconst elements = [\"element0\", \"element1\", \"element2\", \"element3\", \"element4\"];\n\nfunction scrollToElement(refs, refName) {\n  const element = refs[refName][0];\n  const container = document.querySelector(\".code-contents\");\n  const offsetMargin = 80;  //이거는 화면에 맞게 알아서 조정하기\n\n  if (element && container) {\n    container.scrollTo({\n      top: element.offsetTop - offsetMargin,\n      behavior: \"smooth\"\n    });\n  }\n}\n</script>",
+                        "codeDescription": "사실상 scrollintoView는 전체스크롤이 움직이고, 내가 선택한 요소로 스크롤 되는 개버그가 있다. 안전하게 스크롤하려면 이걸 쓰는걸 추천한다"
+                    },
+                    {
+                        "codeId": "TPL01_CD02",
+                        "codeLanguage": "React",
+                        "codeContent": "준비중",
+                        "codeDescription": "준비중"
+                    }
+                ]
+            },
+            {
+                "id": "TPL01",
+                "title": "4. scrollTo Top & Bottom",
+                "content": "Scroll을 맨 위와 맨 아래로 보내는 기능입니다",
+                "img": "",
+                "gif": "",
+                "iframeSrc": "http://localhost:8080/SCROLL_4",
+                "codeInfo": [
+                    {
+                        "codeId": "TPL01_CD01",
+                        "codeLanguage": "vue",
+                        "codeContent": "<template>\n  <div class=\"code-container\">\n    <div>\n      <h3 class=\"code-title\">각 요소별 스크롤 이동</h3>\n\n      <div class=\"code-contents\">\n        <div class=\"content-item\" v-for=\"(element, idx) in elements\" :key=\"idx\" :ref=\"element\">{{ idx + 1 }}번째 요소</div>\n      </div>\n\n      <div class=\"button-group\">\n        <button @click=\"scrollToTop()\">맨 위로 가기</button>\n        <button @click=\"scrollToBottom()\">맨 아래로 가기</button>\n      </div>\n    </div>\n  </div>\n</template>\n\n<script setup>\nconst elements = [\"element0\", \"element1\", \"element2\", \"element3\", \"element4\"];\n\n//스크롤 맨 위로\nfunction scrollToTop() {\n  const container = document.querySelector(\".code-contents\");\n  container.scrollTo({\n    top: 0,\n    behavior: \"smooth\"\n  });\n}\n\n//스크롤 맨 아래로\nfunction scrollToBottom() {\n  const container = document.querySelector(\".code-contents\");\n  container.scrollTo({\n    top: container.scrollHeight - container.clientHeight,\n    behavior: \"smooth\"\n  });\n}\n</script>",
+                        "codeDescription": "맨 위로갈때는 top에 0값을, 아래로 갈때는 scrollHeight에clientHeight를 빼면됨. 여기서 scrollHeight는 전체높이 clientHeight는 보이는 부분의 높이임"
                     },
                     {
                         "codeId": "TPL01_CD02",

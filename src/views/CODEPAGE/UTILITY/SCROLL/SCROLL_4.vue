@@ -4,34 +4,38 @@
       <h3 class="code-title">각 요소별 스크롤 이동</h3>
 
       <div class="code-contents">
-        <div class="content-item" ref="element0">첫번째 요소</div>
-        <div class="content-item" ref="element1">두번째 요소</div>
-        <div class="content-item" ref="element2">세번째 요소</div>
-        <div class="content-item" ref="element3">네번째 요소</div>
-        <div class="content-item" ref="element4">다섯번째 요소</div>
+        <div class="content-item" v-for="(element, idx) in elements" :key="idx" :ref="element">{{ idx + 1 }}번째 요소</div>
       </div>
 
       <div class="button-group">
-        <button @click="scrollToElement($refs, 'element0')">첫번째로 이동</button>
-        <button @click="scrollToElement($refs, 'element1')">두번째로 이동</button>
-        <button @click="scrollToElement($refs, 'element2')">세번째로 이동</button>
-        <button @click="scrollToElement($refs, 'element3')">네번째로 이동</button>
-        <button @click="scrollToElement($refs, 'element4')">다섯번째로 이동</button>
+        <button @click="scrollToTop()">맨 위로 가기</button>
+        <button @click="scrollToBottom()">맨 아래로 가기</button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-function scrollToElement(refs, refName) {
-  const element = refs[refName];
-  if (element) {
-    //block는 start center end nearest
-    element.scrollIntoView({ behavior: 'smooth',  block: "nearest"});
-  }
+const elements = ["element0", "element1", "element2", "element3", "element4"];
+
+//스크롤 맨 위로
+function scrollToTop() {
+  const container = document.querySelector(".code-contents");
+  container.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+//스크롤 맨 아래로
+function scrollToBottom() {
+  const container = document.querySelector(".code-contents");
+  container.scrollTo({
+    top: container.scrollHeight - container.clientHeight,
+    behavior: "smooth"
+  });
 }
 </script>
-
 
 <style scoped>
 .code-container {

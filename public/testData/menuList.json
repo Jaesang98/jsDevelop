@@ -141,7 +141,19 @@
                         "categories": [
                             {
                                 "id": "MNU04_CAT01",
-                                "name": "스크롤 이벤트"
+                                "name": "scrollIntoView(직접 Ref)"
+                            },
+                            {
+                                "id": "MNU04_CAT02",
+                                "name": "scrollIntoView(반복 Ref)"
+                            },
+                            {
+                                "id": "MNU04_CAT03",
+                                "name": "scrollTo 사용"
+                            },
+                            {
+                                "id": "MNU04_CAT04",
+                                "name": "scrollTo Top & Bottom"
                             }
                         ]
                     }

@@ -63,7 +63,8 @@
 
     <div class="code-category">
       <div class="code-sideTemplete">
-        <div class="code-sideList" v-for="(category, idx) in categoryList" :key="idx" @click="scrollCategory($refs, idx)">
+        <div class="code-sideList" v-for="(category, idx) in categoryList" :key="idx"
+          @click="scrollCategory($refs, idx)">
           {{ category.name }}</div>
       </div>
     </div>
@@ -141,12 +142,13 @@ function resCodeList(menuId) {
 
 function scrollCategory(refs, idx) {
   const IdKey = "CAT" + idx;
-  const element = document.getElementById(IdKey);
+  const element = refs[IdKey][0]; //ref로 찾은 요소
+  // const element = document.getElementById(IdKey);  //ID로 찾은 요소
   const container = document.querySelector(".code-contents");
 
   if (element && container) {
     container.scrollTo({
-      top: element.offsetTop-50,
+      top: element.offsetTop - 50,
       behavior: "smooth"
     });
   }

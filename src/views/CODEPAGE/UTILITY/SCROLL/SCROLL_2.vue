@@ -4,34 +4,35 @@
       <h3 class="code-title">각 요소별 스크롤 이동</h3>
 
       <div class="code-contents">
-        <div class="content-item" ref="element0">첫번째 요소</div>
-        <div class="content-item" ref="element1">두번째 요소</div>
-        <div class="content-item" ref="element2">세번째 요소</div>
-        <div class="content-item" ref="element3">네번째 요소</div>
-        <div class="content-item" ref="element4">다섯번째 요소</div>
+        <div class="content-item" 
+          v-for="(element,idx) in elements" 
+          :key="idx"
+          :ref="element">{{idx+1}}번째 요소</div>
       </div>
 
       <div class="button-group">
-        <button @click="scrollToElement($refs, 'element0')">첫번째로 이동</button>
-        <button @click="scrollToElement($refs, 'element1')">두번째로 이동</button>
-        <button @click="scrollToElement($refs, 'element2')">세번째로 이동</button>
-        <button @click="scrollToElement($refs, 'element3')">네번째로 이동</button>
-        <button @click="scrollToElement($refs, 'element4')">다섯번째로 이동</button>
+        <button 
+          v-for="(element,idx) in elements" 
+          :key="idx"
+          @click="scrollToElement($refs, element)">{{idx+1}}번째로 이동
+      </button>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
+const elements = ["element0", "element1", "element2", "element3", "element4"];
+
 function scrollToElement(refs, refName) {
   const element = refs[refName];
-  if (element) {
+  //element[0] 으로 바꿈
+  if (element && element[0]) {
     //block는 start center end nearest
-    element.scrollIntoView({ behavior: 'smooth',  block: "nearest"});
+    element[0].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 }
 </script>
-
 
 <style scoped>
 .code-container {
