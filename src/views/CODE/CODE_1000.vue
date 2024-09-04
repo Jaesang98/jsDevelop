@@ -5,9 +5,10 @@
     <!-- 사이드 -->
     <div class="code-sideMenu">
       <div class="code-sideTemplete" v-for="(menuList, idx) in menuList" :key="idx">
-        <strong @click="selMenu = menuList.subMenus[0].id">{{ menuList.name }}</strong>
+        <strong @click="selMenu = menuList.subMenus[0].id; resCodeList(menuList.subMenus[0].id)">{{ menuList.name
+          }}</strong>
         <div class="code-sideList" v-for="(subMenu, idx2) in menuList.subMenus" :key="idx2"
-          @click="selMenu = subMenu.id">
+          @click="selMenu = subMenu.id; resCodeList(menuList.subMenus[idx2].id)">
           {{ subMenu.name }}
         </div>
       </div>
@@ -15,24 +16,24 @@
     <!-- 사이드 -->
 
     <div class="code-contents">
-      <div class="content-template" v-for="(codeList, idx) in codeList" :key="idx">
+      <div class="content-template" v-for="(codeList, idx) in codeList" :key="idx" :id="'CAT' + idx" :ref="'CAT' + idx">
         <div class="template-header">
           <h1>{{ codeList.title }}</h1>
           <h4 class="mt-3">{{ codeList.content }}</h4>
         </div>
 
         <!-- 이미지 -->
-        <div class="template-img mt-3">
-          <img src="https://picsum.photos/400/300" alt="Lorem Picsum Image">
+        <div class="template-img mt-3" v-if="codeList.img">
+          <img src="" alt="Lorem Picsum Image">
         </div>
 
         <!-- gif -->
-        <div class="template-gif mt-3">
-          <img src="https://media.giphy.com/media/3ohs7Q4aZCs6Dr7sgI/giphy.gif" alt="Waving Flag">
+        <div class="template-gif mt-3" v-if="codeList.gif">
+          <img src="" alt="Waving Flag">
         </div>
 
         <!--  -->
-        <div class="template-html mt-3">
+        <div class="template-html mt-3" v-if="codeList.iframeSrc">
           <CodeEditor :codeURL="codeList.iframeSrc" />
         </div>
 
@@ -62,7 +63,7 @@
 
     <div class="code-category">
       <div class="code-sideTemplete">
-        <div class="code-sideList" v-for="(category, idx) in categoryList" :key="idx" @click="resCodeList(category.id)">
+        <div class="code-sideList" v-for="(category, idx) in categoryList" :key="idx" @click="scrollCategory($refs, idx)">
           {{ category.name }}</div>
       </div>
     </div>
@@ -90,7 +91,7 @@ const categoryList = computed(() => {                     // 선택한 서브 �
 });
 
 const codeList = ref([]);                                 //각 카테고리의 맞는 리스트
-const selCodeIds = ref([]);                               //각 템플릿의 코드 언어에 따라 구분하는 아이디값
+const selCodeIds = ref([]);                               //각 템플릿의 코드 언어에 따라 구분하는 아이디값 (vue React)
 
 // 메뉴, 서브메뉴, 카테고리 받아옴
 function resMenuList() {
@@ -109,23 +110,46 @@ function resMenuList() {
     });
 }
 
-// 각 카테고리 값의 맞는 데이터
-function resCodeList(categoryID) {
+// 각 메뉴의 맞는 데이터 호출
+function resCodeList(menuId) {
+  const page = ref("showList");
+
+  //소개
+  if (menuId == "MNU01_SUB01" || menuId == "") {
+    page.value = "showList";
+  }
+  //유틸 - 정렬
+  else if (menuId == "MNU04_SUB01") {
+    page.value = "sortList";
+  }
+  else if (menuId == "MNU04_SUB02") {
+    page.value = "scrollList";
+  }
+
   util.JSNetwort({
-    url: "/testData/codeList.json",
+    url: `/testData/${page.value}.json`,
     method: "GET",
     headers: {},
     body: {
-      categoryID: categoryID || "MNU01_CAT01"
+      selMenu: menuId || "MNU01_SUB01"
     }
+  }).then(res => {
+    codeList.value = res.body.codeList;
+    selCodeIds.value = res.body.codeList.map(code => code.codeInfo[0]?.codeId || '');
   })
-    .then(res => {
-      codeList.value = res.body.codeList;
-      selCodeIds.value = res.body.codeList.map(code => code.codeInfo[0]?.codeId || '');
-    })
-    .catch(err => {
-      console.log(err)
+}
+
+function scrollCategory(refs, idx) {
+  const IdKey = "CAT" + idx;
+  const element = document.getElementById(IdKey);
+  const container = document.querySelector(".code-contents");
+
+  if (element && container) {
+    container.scrollTo({
+      top: element.offsetTop-50,
+      behavior: "smooth"
     });
+  }
 }
 
 onMounted(() => {

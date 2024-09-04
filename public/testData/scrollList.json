@@ -1,0 +1,28 @@
+{
+    "body": {
+        "codeList": [
+            {
+                "id": "TPL01",
+                "title": "1. SCROLL (각 요소에 맞게 스크롤)",
+                "content": "스크롤 정의",
+                "img": "",
+                "gif": "",
+                "iframeSrc": "http://localhost:8080/SCROLL_1",
+                "codeInfo": [
+                    {
+                        "codeId": "TPL01_CD01",
+                        "codeLanguage": "vue",
+                        "codeContent": "",
+                        "codeDescription": ""
+                    },
+                    {
+                        "codeId": "TPL01_CD02",
+                        "codeLanguage": "React",
+                        "codeContent": "준비중",
+                        "codeDescription": "준비중"
+                    }
+                ]
+            }
+        ]
+    }
+}

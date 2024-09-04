@@ -12,10 +12,6 @@
                             {
                                 "id": "MNU01_CAT01",
                                 "name": "내 소개임"
-                            },
-                            {
-                                "id": "MNU01_CAT02",
-                                "name": "내가 만든 이유임"
                             }
                         ]
                     }
@@ -127,15 +123,15 @@
                 "subMenus": [
                     {
                         "id": "MNU04_SUB01",
-                        "name": "DATE",
+                        "name": "SORT",
                         "categories": [
                             {
                                 "id": "MNU04_CAT01",
-                                "name": "날짜 형식 변환"
+                                "name": "Array & Array-Object"
                             },
                             {
                                 "id": "MNU04_CAT02",
-                                "name": "날짜 비교"
+                                "name": "Array-Object String변환"
                             }
                         ]
                     },
@@ -144,12 +140,8 @@
                         "name": "SCROLL",
                         "categories": [
                             {
-                                "id": "MNU04_CAT03",
+                                "id": "MNU04_CAT01",
                                 "name": "스크롤 이벤트"
-                            },
-                            {
-                                "id": "MNU04_CAT04",
-                                "name": "스크롤 위치 저장"
                             }
                         ]
                     }

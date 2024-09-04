@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { ref, defineProps } from 'vue'
+import { ref, defineProps, watch} from 'vue'
 const props = defineProps({
   codeURL: {
     type: String,
@@ -13,6 +13,8 @@ const props = defineProps({
   }
 })
 
-
 const iframeSrc = ref(props.codeURL);
+watch(() => props.codeURL, (newURL) => {
+  iframeSrc.value = newURL;
+});
 </script>
