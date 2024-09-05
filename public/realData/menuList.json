@@ -22,48 +22,12 @@
                 "name": "API사용",
                 "subMenus": [
                     {
-                        "id": "MNU02_SUB01",
-                        "name": "네이버 API",
-                        "categories": [
-                            {
-                                "id": "MNU02_CAT01",
-                                "name": "네이버 로그인"
-                            },
-                            {
-                                "id": "MNU02_CAT02",
-                                "name": "네이버 지도"
-                            },
-                            {
-                                "id": "MNU02_CAT03",
-                                "name": "네이버 검색"
-                            }
-                        ]
-                    },
-                    {
                         "id": "MNU02_SUB02",
                         "name": "카카오 API",
                         "categories": [
                             {
-                                "id": "MNU02_CAT04",
-                                "name": "카카오 로그인"
-                            },
-                            {
-                                "id": "MNU02_CAT05",
+                                "id": "MNU02_CAT01",
                                 "name": "카카오 지도"
-                            }
-                        ]
-                    },
-                    {
-                        "id": "MNU02_SUB03",
-                        "name": "구글 API",
-                        "categories": [
-                            {
-                                "id": "MNU02_CAT06",
-                                "name": "구글 로그인"
-                            },
-                            {
-                                "id": "MNU02_CAT07",
-                                "name": "구글 지도"
                             }
                         ]
                     }
@@ -75,43 +39,19 @@
                 "subMenus": [
                     {
                         "id": "MNU03_SUB01",
-                        "name": "부트스트랩",
+                        "name": "MOMENT",
                         "categories": [
                             {
                                 "id": "MNU03_CAT01",
-                                "name": "부트스트랩 기본"
+                                "name": "날짜 FORMAT"
                             },
                             {
                                 "id": "MNU03_CAT02",
-                                "name": "부트스트랩 구성 요소"
-                            }
-                        ]
-                    },
-                    {
-                        "id": "MNU03_SUB02",
-                        "name": "swiper",
-                        "categories": [
+                                "name": "날짜 계산"
+                            },
                             {
                                 "id": "MNU03_CAT03",
-                                "name": "기본 사용법"
-                            },
-                            {
-                                "id": "MNU03_CAT04",
-                                "name": "고급 설정"
-                            }
-                        ]
-                    },
-                    {
-                        "id": "MNU03_SUB03",
-                        "name": "Datepicker",
-                        "categories": [
-                            {
-                                "id": "MNU03_CAT05",
-                                "name": "기본 사용법"
-                            },
-                            {
-                                "id": "MNU03_CAT06",
-                                "name": "커스터마이징"
+                                "name": "날짜 비교"
                             }
                         ]
                     }
