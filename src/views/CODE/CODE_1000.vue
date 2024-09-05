@@ -119,18 +119,28 @@ function resCodeList(menuId) {
   if (menuId == "MNU01_SUB01" || menuId == "") {
     page.value = "showList";
   }
-  //유틸 - 정렬
+
+  /** 라이브러리 */
+  //정렬
+  else if (menuId == "MNU03_SUB01") {
+    page.value = "moment";
+  }
+  /** 라이브러리 */
+
+  /** 유틸 */
+  //정렬
   else if (menuId == "MNU04_SUB01") {
     page.value = "sortList";
   }
-  //유틸 - 스크롤
+  //스크롤
   else if (menuId == "MNU04_SUB02") {
     page.value = "scrollList";
   }
-  //유틸 - 페이징
+  //페이징
   else if (menuId == "MNU04_SUB03") {
     page.value = "pagingList";
   }
+  /** 유틸 */
 
   util.JSNetwort({
     url: `./testData/${page.value}.json`,

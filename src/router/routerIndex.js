@@ -5,7 +5,8 @@ import { createWebHashHistory, createRouter } from "vue-router";
 import mainRouter from '@/router/routes/mainRouter';
 import codeRouter from '@/router/routes/codeRouter';
 import siteRouter from '@/router/routes/siteRouter';
-import codeUtilRouter from "./routes/codeUtilRouter";
+import codeUtilRouter from "@/router/routes/codeUtilRouter";
+import codeLibraryRouter from "@/router/routes/codeLibraryRouter"
 
 const router = createRouter({
     history: createWebHashHistory(process.env.BASE_URL),
@@ -21,6 +22,7 @@ const router = createRouter({
         ...codeRouter,
         ...siteRouter,
         ...codeUtilRouter,
+        ...codeLibraryRouter,
 
 
         // 404 Path 처리
