@@ -38,5 +38,19 @@ const codepageRouter = [
         props: true,
         component: () => import(/* webpackChunkName: "CODE" */ '@/views/CODEPAGE/UTILITY/SCROLL/SCROLL_4.vue')
     },
+
+    //PAGING
+    {
+        path: '/PAGING_1',
+        name: 'PAGING_1',
+        props: true,
+        component: () => import(/* webpackChunkName: "CODE" */ '@/views/CODEPAGE/UTILITY/PAGING/PAGING_1.vue')
+    },
+    {
+        path: '/PAGING_2',
+        name: 'PAGING_2',
+        props: true,
+        component: () => import(/* webpackChunkName: "CODE" */ '@/views/CODEPAGE/UTILITY/PAGING/PAGING_2.vue')
+    },
 ];
 export default codepageRouter;

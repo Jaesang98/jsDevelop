@@ -127,6 +127,10 @@ function resCodeList(menuId) {
   else if (menuId == "MNU04_SUB02") {
     page.value = "scrollList";
   }
+  //유틸 - 페이징
+  else if (menuId == "MNU04_SUB03") {
+    page.value = "pagingList";
+  }
 
   util.JSNetwort({
     url: `./testData/${page.value}.json`,

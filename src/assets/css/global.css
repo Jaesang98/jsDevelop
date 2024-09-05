@@ -167,31 +167,3 @@ footer {
   width: 20%;
   padding: 10px;
 }
-
-/* 모바일 환경을 위한 스케일링 */
-@media (max-width: 768px) {
-  html {
-    font-size: 14px; /* 기본 폰트 크기를 줄임 */
-  }
-
-  body {
-    transform: scale(0.8); /* 전체 콘텐츠를 80%로 축소 */
-    transform-origin: top left; /* 변환 원점을 좌상단으로 설정 */
-  }
-
-  .container,
-  .container-header,
-  .containter-footer {
-    max-width: 125%; /* 컨테이너 최대 너비를 늘려 스케일 축소 보정 */
-  }
-
-  .button-main {
-    max-width: 125%; /* 버튼 최대 너비를 늘려 스케일 축소 보정 */
-  }
-
-  .template-img img,
-  .template-gif img,
-  .template-html {
-    max-width: 125%; /* 이미지와 HTML 템플릿 최대 너비를 늘려 스케일 축소 보정 */
-  }
-}

@@ -156,6 +156,20 @@
                                 "name": "scrollTo Top & Bottom"
                             }
                         ]
+                    },
+                    {
+                        "id": "MNU04_SUB03",
+                        "name": "PAGING",
+                        "categories": [
+                            {
+                                "id": "MNU04_CAT01",
+                                "name": "Scroll & Paging"
+                            },
+                            {
+                                "id": "MNU04_CAT02",
+                                "name": "Click & Paging"
+                            }
+                        ]
                     }
                 ]
             }
