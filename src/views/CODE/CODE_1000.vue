@@ -103,7 +103,6 @@ function resMenuList() {
     body: {}
   })
     .then(res => {
-      console.log(test)
       menuList.value = res.body.menuList;
       selMenu.value = menuList.value[0].subMenus[0].id;
     })
