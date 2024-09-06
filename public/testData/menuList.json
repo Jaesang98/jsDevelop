@@ -43,15 +43,7 @@
                         "categories": [
                             {
                                 "id": "MNU03_CAT01",
-                                "name": "날짜 FORMAT"
-                            },
-                            {
-                                "id": "MNU03_CAT02",
-                                "name": "날짜 계산"
-                            },
-                            {
-                                "id": "MNU03_CAT03",
-                                "name": "날짜 비교"
+                                "name": "Format Dates"
                             }
                         ]
                     }
