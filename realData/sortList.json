@@ -1,0 +1,50 @@
+{
+    "body": {
+        "codeList": [
+            {
+                "id": "TPL01",
+                "title": "1. SORT (Array & Array Object)",
+                "content": "Array와 Array Object 정렬",
+                "img": "",
+                "gif": "",
+                "iframeSrc": "https://jaesang98.github.io/jsnamDeveloper/#/SORT_1",
+                "codeInfo": [
+                    {
+                        "codeId": "TPL01_CD01",
+                        "codeLanguage": "vue",
+                        "codeContent": "//코드정렬 (오름차순)\nfunction sortArrayIncreasing() {\n  code1.value.sort(function (a, b) {\n    return a - b;\n  });\n}\n\n//코드정렬 (내림차순)\nfunction sortArrayDescending() {\n  code1.value.sort(function (a, b) {\n    return b - a;\n  })\n}\n\n//코드정렬 (오름차순)\nfunction sortObjectIncreasing() {\n  code2.value.sort(function (a, b) {\n    return a.id - b.id;\n  });\n}\n\n//코드정렬 (내림차순)\nfunction sortObjectDescending() {\n  code2.value.sort(function (a, b) {\n    return b.id - a.id;\n  })\n}",
+                        "codeDescription": "Array와 Array Object의 오름차순과 내림차순 정렬코드.\nArray는 String과 Number가 적용이 되지만, Array Object는 되지않음.\n Array Object는 Number와 String으로 된 숫자만 정렬가능"
+                    },
+                    {
+                        "codeId": "TPL01_CD02",
+                        "codeLanguage": "React",
+                        "codeContent": "준비중",
+                        "codeDescription": "준비중"
+                    }
+                ]
+            },
+            {
+                "id": "TPL01",
+                "title": "2. SORT (Array Object String변환)",
+                "content": "Array Object String문자열 정렬",
+                "img": "",
+                "gif": "",
+                "iframeSrc": "https://jaesang98.github.io/jsnamDeveloper/#/SORT_2",
+                "codeInfo": [
+                    {
+                        "codeId": "TPL02_CD01",
+                        "codeLanguage": "vue",
+                        "codeContent": "//코드정렬 (오름차순) - 문자열(삼항연산자)\nfunction sortObjectStringIncreasing1() {\n  code2.value.sort(function (a, b) {\n    return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;\n  });\n}\n\n//코드정렬 (내림차순) - 문자열(삼항연산자)\nfunction sortObjectStringDescending1() {\n  code2.value.sort(function (a, b) {\n    return a.name > b.name ? -1 : a.name > b.name ? 1 : 0;\n  })\n}\n\n//코드정렬 (오름차순) - 문자열(localeCompare)\nfunction sortObjectStringIncreasing2() {\n  code2.value.sort(function (a, b) {\n    return a.name.localeCompare(b.name);\n  });\n}\n\n//코드정렬 (내림차순) - 문자열(localeCompare)\nfunction sortObjectStringDescending2() {\n  code2.value.sort(function (a, b) {\n    return b.name.localeCompare(a.name);\n  })\n}",
+                        "codeDescription": "정렬의 되지 않은 Array Object의 String은 두가지 방법이 있음.\n 일반적으로 국제화가 필요하거나 정확한 문자열 정렬이 중요한 경우에는 localeCompare를 사용하고, 단순한 ASCII 문자열 정렬이나 성능이 중요한 경우에는 삼항 연산자 방식을 사용하는 것이 좋음"
+                    },
+                    {
+                        "codeId": "TPL02_CD02",
+                        "codeLanguage": "React",
+                        "codeContent": "준비중",
+                        "codeDescription": "react는 준비중임 ㅋㅋ"
+                    }
+                ]
+            }
+        ]
+    }
+}
