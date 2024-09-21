@@ -120,25 +120,36 @@ function resCodeList(menuId) {
     page.value = "showList";
   }
 
+  /** 프레임워크 */
+  //watch
+  else if (menuId == "MNU02_SUB01") {
+    page.value = "vueList";
+  }
+  /** 프레임워크 */
+
   /** 라이브러리 */
   //정렬
-  else if (menuId == "MNU03_SUB01") {
+  else if (menuId == "MNU04_SUB01") {
     page.value = "moment";
   }
   /** 라이브러리 */
 
   /** 유틸 */
   //정렬
-  else if (menuId == "MNU04_SUB01") {
+  else if (menuId == "MNU05_SUB01") {
     page.value = "sortList";
   }
   //스크롤
-  else if (menuId == "MNU04_SUB02") {
+  else if (menuId == "MNU05_SUB02") {
     page.value = "scrollList";
   }
   //페이징
-  else if (menuId == "MNU04_SUB03") {
+  else if (menuId == "MNU05_SUB03") {
     page.value = "pagingList";
+  }
+  //ARRAY
+  else if (menuId == "MNU05_SUB04") {
+    page.value = "ArrayList";
   }
   /** 유틸 */
 

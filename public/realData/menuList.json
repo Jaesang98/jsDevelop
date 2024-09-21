@@ -19,51 +19,23 @@
             },
             {
                 "id": "MNU02",
-                "name": "API사용",
+                "name": "프레임워크 사용",
                 "subMenus": [
                     {
                         "id": "MNU02_SUB01",
-                        "name": "네이버 API",
+                        "name": "vue",
                         "categories": [
                             {
                                 "id": "MNU02_CAT01",
-                                "name": "네이버 로그인"
+                                "name": "watch 사용법"
                             },
                             {
                                 "id": "MNU02_CAT02",
-                                "name": "네이버 지도"
+                                "name": "computed 사용법"
                             },
                             {
                                 "id": "MNU02_CAT03",
-                                "name": "네이버 검색"
-                            }
-                        ]
-                    },
-                    {
-                        "id": "MNU02_SUB02",
-                        "name": "카카오 API",
-                        "categories": [
-                            {
-                                "id": "MNU02_CAT04",
-                                "name": "카카오 로그인"
-                            },
-                            {
-                                "id": "MNU02_CAT05",
-                                "name": "카카오 지도"
-                            }
-                        ]
-                    },
-                    {
-                        "id": "MNU02_SUB03",
-                        "name": "구글 API",
-                        "categories": [
-                            {
-                                "id": "MNU02_CAT06",
-                                "name": "구글 로그인"
-                            },
-                            {
-                                "id": "MNU02_CAT07",
-                                "name": "구글 지도"
+                                "name": "props와 emit 사용법"
                             }
                         ]
                     }
@@ -71,47 +43,15 @@
             },
             {
                 "id": "MNU03",
-                "name": "라이브러리사용",
+                "name": "API사용",
                 "subMenus": [
                     {
-                        "id": "MNU03_SUB01",
-                        "name": "부트스트랩",
+                        "id": "MNU03_SUB02",
+                        "name": "카카오 API",
                         "categories": [
                             {
                                 "id": "MNU03_CAT01",
-                                "name": "부트스트랩 기본"
-                            },
-                            {
-                                "id": "MNU03_CAT02",
-                                "name": "부트스트랩 구성 요소"
-                            }
-                        ]
-                    },
-                    {
-                        "id": "MNU03_SUB02",
-                        "name": "swiper",
-                        "categories": [
-                            {
-                                "id": "MNU03_CAT03",
-                                "name": "기본 사용법"
-                            },
-                            {
-                                "id": "MNU03_CAT04",
-                                "name": "고급 설정"
-                            }
-                        ]
-                    },
-                    {
-                        "id": "MNU03_SUB03",
-                        "name": "Datepicker",
-                        "categories": [
-                            {
-                                "id": "MNU03_CAT05",
-                                "name": "기본 사용법"
-                            },
-                            {
-                                "id": "MNU03_CAT06",
-                                "name": "커스터마이징"
+                                "name": "카카오 지도"
                             }
                         ]
                     }
@@ -119,55 +59,81 @@
             },
             {
                 "id": "MNU04",
-                "name": "유틸리티",
+                "name": "라이브러리사용",
                 "subMenus": [
                     {
                         "id": "MNU04_SUB01",
-                        "name": "SORT",
+                        "name": "MOMENT",
                         "categories": [
                             {
                                 "id": "MNU04_CAT01",
+                                "name": "Format Dates"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "MNU05",
+                "name": "유틸리티",
+                "subMenus": [
+                    {
+                        "id": "MNU05_SUB01",
+                        "name": "SORT",
+                        "categories": [
+                            {
+                                "id": "MNU05_CAT01",
                                 "name": "Array & Array-Object"
                             },
                             {
-                                "id": "MNU04_CAT02",
+                                "id": "MNU05_CAT02",
                                 "name": "Array-Object String변환"
                             }
                         ]
                     },
                     {
-                        "id": "MNU04_SUB02",
+                        "id": "MNU05_SUB02",
                         "name": "SCROLL",
                         "categories": [
                             {
-                                "id": "MNU04_CAT01",
+                                "id": "MNU05_CAT01",
                                 "name": "scrollIntoView(직접 Ref)"
                             },
                             {
-                                "id": "MNU04_CAT02",
+                                "id": "MNU05_CAT02",
                                 "name": "scrollIntoView(반복 Ref)"
                             },
                             {
-                                "id": "MNU04_CAT03",
+                                "id": "MNU05_CAT03",
                                 "name": "scrollTo 사용"
                             },
                             {
-                                "id": "MNU04_CAT04",
+                                "id": "MNU05_CAT04",
                                 "name": "scrollTo Top & Bottom"
                             }
                         ]
                     },
                     {
-                        "id": "MNU04_SUB03",
+                        "id": "MNU05_SUB03",
                         "name": "PAGING",
                         "categories": [
                             {
-                                "id": "MNU04_CAT01",
+                                "id": "MNU05_CAT01",
                                 "name": "Scroll & Paging"
                             },
                             {
-                                "id": "MNU04_CAT02",
+                                "id": "MNU05_CAT02",
                                 "name": "Click & Paging"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "MNU05_SUB04",
+                        "name": "ARRAY",
+                        "categories": [
+                            {
+                                "id": "MNU05_CAT01",
+                                "name": "FILTER"
                             }
                         ]
                     }

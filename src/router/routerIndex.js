@@ -7,6 +7,7 @@ import codeRouter from '@/router/routes/codeRouter';
 import siteRouter from '@/router/routes/siteRouter';
 import codeUtilRouter from "@/router/routes/codeUtilRouter";
 import codeLibraryRouter from "@/router/routes/codeLibraryRouter"
+import codeFrameworkRouter from "@/router/routes/codeFrameworkRouter"
 
 const router = createRouter({
     history: createWebHashHistory(process.env.BASE_URL),
@@ -23,6 +24,7 @@ const router = createRouter({
         ...siteRouter,
         ...codeUtilRouter,
         ...codeLibraryRouter,
+        ...codeFrameworkRouter,
 
 
         // 404 Path 처리

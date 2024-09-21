@@ -52,5 +52,13 @@ const codepageRouter = [
         props: true,
         component: () => import(/* webpackChunkName: "CODE" */ '@/views/CODEPAGE/UTILITY/PAGING/PAGING_2.vue')
     },
+
+    //ARRAY
+    {
+        path: '/ARRAY_FILTER_1',
+        name: 'ARRAY_FILTER_1',
+        props: true,
+        component: () => import(/* webpackChunkName: "CODE" */ '@/views/CODEPAGE/UTILITY/ARRAY/ARRAY_FILTER_1.vue')
+    },
 ];
 export default codepageRouter;
