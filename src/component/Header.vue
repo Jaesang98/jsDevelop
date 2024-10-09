@@ -11,9 +11,9 @@
           <li class="nav-item">
             <a class="nav-link active" @click="util.pageOpen('CODE_1000')">예제코드</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link active" @click="util.pageOpen('SITE_1000')">예제사이트</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link disabled" href="#">뭘만들지고민중</a>
           </li>
