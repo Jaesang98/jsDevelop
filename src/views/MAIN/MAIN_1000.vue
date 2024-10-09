@@ -7,7 +7,7 @@
       <p class="mt-3">Though it looks quite polished in English, this is still a developer site with much room for improvement.</p>
       <button class="button-main mt-3" @click="util.pageOpen('CODE_1000')">오늘은 뭘 보러왔니?</button>
 
-      <!-- <iframe src="https://jaesang98.github.io/jsnamDeveloper/#CODE_1000" width="100%" height="500px" frameborder="0"></iframe> -->
+      <!-- <iframe src="https://jaesang98.github.io/jsDevelop/#CODE_1000" width="100%" height="500px" frameborder="0"></iframe> -->
     </div>
   </section>
 
